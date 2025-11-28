@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <title>The Daily | Portal de notícias</title>
+  </head>
+  <body>
+    <header>
+      <h1>The Daily</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="noticia.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+          <li><a href="#">Login / Cadastre-se</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+
+    <!-- INÍCIO DO LOOP: Para cada notícia na lista... -->
+    <% noticias.forEach(function(item) { %>
+    <article class="card-noticia">
+      <!-- Lógica da Imagem: Se não tiver foto na API, usa uma padrão -->
+      <img
+        src="<%= item.urlToImage || '/img/padrao.jpg' %>"
+        alt="Imagem da notícia"
+        onerror="this.src='/img/padrao.jpg'"
+      />
+      <div class="conteudo">
+        <h3><%= item.title %></h3>
+        <!-- Descrição (limita caso venha vazio) -->
+        <p><%= item.description || 'Sem descrição disponível.' %></p>
+        <!-- Link para a notícia original -->
+        <a href="<%= item.url %>" target="_blank" class="botao">Ler Completa</a>
+      </div>
+    </article>
+    <% }); %>
+    <!-- FIM DO LOOP -->
+
+    <div class="outras-noticias">
+      <div class="card-noticia">
+        <span class="tag tag-meioambiente">Meio-ambiente</span>
+        <img src="/img/noticia-4.jpg" alt="Canal de Veneza tingido de verde" />
+        <h3>
+          Veneza expulsa Greta da cidade após ativista tingir canal de verde
+        </h3>
+        <a
+          href="https://www.poder360.com.br/poder-internacional/veneza-expulsa-greta-da-cidade-apos-ativista-tingir-canal-de-verde/"
+          >Leia mais</a
+        >
+      </div>
+    </div>
+
+    <form action="/" method="GET" class="barra-pesquisa">
+      <input type="text" name="q" placeholder="Buscar notícias..." required />
+      <button type="submit">Pesquisar</button>
+    </form>
+
+    </main>
+
+    <footer>
+      <p>&copy; 2025 The Daily. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
