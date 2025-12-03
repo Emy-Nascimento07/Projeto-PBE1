@@ -687,3 +687,12 @@ h1.noticia-oficial {
     border-bottom: none;
     padding-bottom: 0;
 }
+
+.barra-pesquisa input[type="text"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    padding-top: 18px;
+}
