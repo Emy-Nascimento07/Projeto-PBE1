@@ -44,6 +44,11 @@
         </div>
       </section>
 
+      <form action="/" method="GET" class="barra-pesquisa">
+        <input type="text" name="q" placeholder="Buscar notícias..." required />
+        <button type="submit">Pesquisar</button>
+      </form>
+
       <!-- INÍCIO DO LOOP: Para cada notícia na lista... -->
       <% noticias.forEach(function(item) { %>
       <article class="card-noticia">
@@ -166,11 +171,8 @@
 
       
 
-      <form action="/" method="GET" class="barra-pesquisa">
-        <input type="text" name="q" placeholder="Buscar notícias..." required />
-        <button type="submit">Pesquisar</button>
-      </form>
-    </main>
+      
+
 
     <footer>
       <p>&copy; 2025 The Daily. Todos os direitos reservados.</p>
