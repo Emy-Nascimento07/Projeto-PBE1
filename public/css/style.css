@@ -88,6 +88,7 @@ main {
     width: 100%;
     max-width: 1200px;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    padding-top: 20px;
 }
 .outras-noticias img {
     width: 100%;
@@ -208,6 +209,7 @@ main {
     border-radius: 10px;
     margin: 0 auto;
     padding-top: -100px;
+    padding-bottom: 18px;
 }
 
 .video h2 {
