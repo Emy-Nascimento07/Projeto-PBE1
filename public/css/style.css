@@ -234,6 +234,7 @@ main {
     color: white;
     text-align: center;
     position: relative;
+    padding-bottom: 18px;
 }
 
 .hero-content {
