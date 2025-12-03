@@ -27,46 +27,149 @@
       </nav>
     </header>
     <main>
+      <section class="hero-news">
+        <div class="hero-content">
+          <div class="hero-meta">
+            <span class="top-label">As principais notícias do dia</span>
+            <span class="tag tag-meioambiente">Meio-ambiente</span>
+            <span class="data">25 de Novembro, 2025</span>
+          </div>
 
-    <!-- INÍCIO DO LOOP: Para cada notícia na lista... -->
-    <% noticias.forEach(function(item) { %>
-    <article class="card-noticia">
-      <!-- Lógica da Imagem: Se não tiver foto na API, usa uma padrão -->
-      <img
-        src="<%= item.urlToImage || '/img/padrao.jpg' %>"
-        alt="Imagem da notícia"
-        onerror="this.src='/img/padrao.jpg'"
-      />
-      <div class="conteudo">
-        <h3><%= item.title %></h3>
-        <!-- Descrição (limita caso venha vazio) -->
-        <p><%= item.description || 'Sem descrição disponível.' %></p>
-        <!-- Link para a notícia original -->
-        <a href="<%= item.url %>" target="_blank" class="botao">Ler Completa</a>
+          <h1>
+            COP30 em Belém: participação histórica, resultado insuficiente
+          </h1>
+          <p>Especialistas discutem os desafios e avanços na conferência.</p>
+
+          <a class="lermais" href="noticia.html">Leia mais</a>
+        </div>
+      </section>
+
+      <!-- INÍCIO DO LOOP: Para cada notícia na lista... -->
+      <% noticias.forEach(function(item) { %>
+      <article class="card-noticia">
+        <!-- Lógica da Imagem: Se não tiver foto na API, usa uma padrão -->
+        <img
+          src="<%= item.urlToImage || '/img/padrao.jpg' %>"
+          alt="Imagem da notícia"
+          onerror="this.src='/img/padrao.jpg'"
+        />
+        <div class="conteudo">
+          <h3><%= item.title %></h3>
+          <!-- Descrição (limita caso venha vazio) -->
+          <p><%= item.description || 'Sem descrição disponível.' %></p>
+          <!-- Link para a notícia original -->
+          <a href="<%= item.url %>" target="_blank" class="botao"
+            >Ler Completa</a
+          >
+        </div>
+      </article>
+      <% }); %>
+      <!-- FIM DO LOOP -->
+
+      <div class="outras-noticias">
+        <div class="card-noticia">
+          <span class="tag tag-agro">Agricultura</span>
+          <img src="/img/noticia-1.webp" alt="" />
+          <h3>
+            Brasil lidera integração inédita entre clima, natureza e uso da
+            terra na COP30
+          </h3>
+          <a
+            href="https://opresenterural.com.br/brasil-lidera-integracao-inedita-entre-clima-natureza-e-uso-da-terra-na-cop30/"
+            >Leia mais</a
+          >
+        </div>
+        <div class="card-noticia">
+          <span class="tag tag-financas">Finanças</span>
+          <img src="/img/noticia-2.webp" alt="" />
+          <h3>
+            Dólar recua e Ibovespa sobe com mercado atento aos rumos dos juros
+            no Brasil e nos EUA
+          </h3>
+          <a
+            href="https://oglobo.globo.com/economia/financas/ao-vivo/ibovespa-hoje-acompanhe-bolsa-e-dolar.ghtml"
+            >Leia mais</a
+          >
+        </div>
+        <div class="card-noticia">
+          <span class="tag tag-pop">Pop</span>
+          <img src="/img/noticia-3.avif" alt="" />
+          <h3>
+            Paul McCartney lança faixa silenciosa em protesto contra projeto de
+            IA
+          </h3>
+          <a
+            href="https://g1.globo.com/pop-arte/musica/noticia/2025/11/18/paul-mccartney-lanca-faixa-silenciosa-em-protesto-contra-projeto-de-ia.ghtml"
+            >Leia mais</a
+          >
+        </div>
+        <div class="card-noticia">
+          <span class="tag tag-meioambiente">Meio-ambiente</span>
+          <img
+            src="/img/noticia-4.jpg"
+            alt="Canal de Veneza tingido de verde"
+          />
+          <h3>
+            Veneza expulsa Greta da cidade após ativista tingir canal de verde
+          </h3>
+          <a
+            href="https://www.poder360.com.br/poder-internacional/veneza-expulsa-greta-da-cidade-apos-ativista-tingir-canal-de-verde/"
+            >Leia mais</a
+          >
+        </div>
+
+        <div class="card-noticia">
+          <span class="tag tag-esporte">Esporte</span>
+          <img src="/img/noticia-5.webp" alt="Flamengo e Palmeiras em campo" />
+          <h3>
+            Brasileirão: as chances de título após resultados de Flamengo e
+            Palmeiras
+          </h3>
+          <a
+            href="https://www.cnnbrasil.com.br/esportes/brasileirao/brasileirao-as-chances-de-titulo-apos-resultados-de-flamengo-e-palmeiras/"
+            >Leia mais</a
+          >
+        </div>
+
+        <div class="card-noticia">
+          <span class="tag tag-politica">Política</span>
+          <img
+            src="/img/noticia-6.png"
+            alt="Proposta de aposentadoria para agentes de saúde"
+          />
+          <h3>
+            Governo estuda veto a aposentadoria especial para agentes de saúde e
+            avalia judicialização
+          </h3>
+          <a
+            href="https://cbn.globo.com/politica/noticia/2025/11/26/governo-estuda-veto-a-aposentadoria-especial-para-agentes-de-saude-e-avalia-judicializacao.ghtml"
+            >Leia mais</a
+          >
+        </div>
       </div>
-    </article>
-    <% }); %>
-    <!-- FIM DO LOOP -->
 
-    <div class="outras-noticias">
-      <div class="card-noticia">
-        <span class="tag tag-meioambiente">Meio-ambiente</span>
-        <img src="/img/noticia-4.jpg" alt="Canal de Veneza tingido de verde" />
-        <h3>
-          Veneza expulsa Greta da cidade após ativista tingir canal de verde
-        </h3>
-        <a
-          href="https://www.poder360.com.br/poder-internacional/veneza-expulsa-greta-da-cidade-apos-ativista-tingir-canal-de-verde/"
-          >Leia mais</a
-        >
+      <div class="video">
+        <h2>Confira mais sobre o assunto <b>mais viral</b> do momento</h2>
+        <br />
+        <br />
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/ejzjpscTWfQ?si=9eVGRF9P0m5IS0jb"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
       </div>
-    </div>
 
-    <form action="/" method="GET" class="barra-pesquisa">
-      <input type="text" name="q" placeholder="Buscar notícias..." required />
-      <button type="submit">Pesquisar</button>
-    </form>
+      
 
+      <form action="/" method="GET" class="barra-pesquisa">
+        <input type="text" name="q" placeholder="Buscar notícias..." required />
+        <button type="submit">Pesquisar</button>
+      </form>
     </main>
 
     <footer>
